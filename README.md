@@ -1,9 +1,13 @@
 # elastic-rag-demo
-Demo Elastic RAG (semantic search) with Streamlit on Elastic Labs blog posts
-Retrieval augmented generation (RAG) 
-Test
-e5 small
-Multilingual. In French
+
+This repo will build a local demo of semantic search with RAG (etrieval augmented generation) using the Elastic stack and Streamlit.
+For the content, we will crawl the Elastic Labs blog posts to have some private data.
+
+This generative AI demo has been adapted from Jeff's excellent blog posts (see refs below) with a few changes:
+* I wanted to run everything locally, so the Elastic stack and the LLM run locally,
+* I wanted to have multilingual support, so the demo uses the e5.small embedding model (instead of Elastic's default ELSER) to support multilingual search. The examples will be in French.
+
+Note: this is for demo purpose only! This deployment is not secure, so do not use it in production or with confidential data!
 
 
 ## Requirements
@@ -81,13 +85,13 @@ curl http://localhost:11434/v1/chat/completions \
     }'
 ```
 
-In order to be able to use Kibana connectors, you will need to generate encryption keys from kibana docker and add them to kibana.yml
+In order to be able to use Kibana connectors, you will need to generate encryption keys from kibana docker
 ```
 docker exec -ti kibana-local-dev bash
 kibana@1d5263e8d004:~$ bin/kibana-encryption-keys generate
 exit
 ```
-and save the last 3 lines of output of the key generation command to add them to the .env file.
+Now, save the last 3 lines of the output of the key generation command and add them to the .env file with the following commands.
 Replace the 3 example keys below with your values!
 ```
 cd start-local/elastic-start-local
