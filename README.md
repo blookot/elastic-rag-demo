@@ -367,7 +367,7 @@ Then connect to the UI via the 'Local URL' displayed in the output of the stream
 You should see something like this:
 
 <p align="center">
-<img src="https://github.com/blookot/elastic-rag-demo/blob/main/streamlit-screenshot.jpg" width="60%" alt="Strealit screenshot"/>
+<img src="https://github.com/blookot/elastic-rag-demo/blob/main/streamlit-screenshot.jpg" width="80%" alt="Strealit screenshot"/>
 </p>
 
 You could ask for example (in French in our example!): 
