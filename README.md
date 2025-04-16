@@ -149,7 +149,9 @@ Click the 'Mappings' tab and click 'Add field'.<br/>
 Select 'Semantic text' in the field type, 'body_content' as reference field and 'semantic_body' as new field name. Change to 'my-e5-model' as inference endpoint and click the button 'Add field'.<br/>
 See illustration below:
 
-<img src="https://github.com/blookot/elastic-rag-demo/blob/main/semantic-field.jpg" width="70%" alt="Mistral config"/>
+<p align="center">
+<img src="https://github.com/blookot/elastic-rag-demo/blob/main/semantic-field.jpg" width="80%" alt="Semantic field"/>
+</p>
 
 Click the green button 'Save mapping'.
 
@@ -195,7 +197,9 @@ Go to Kibana > Stack Management > Connectors > Create connector > OpenAI
 
 Configuring the connector for Mistral will look like this:
 
-![Mistral config](https://github.com/blookot/elastic-rag-demo/blob/main/mistral-connector.png)
+<p align="center">
+<img src="https://github.com/blookot/elastic-rag-demo/blob/main/mistral-connector.jpg" width="80%" alt="Mistral config"/>
+</p>
 
 with this setup: 
 * connector name: `Mistral`
@@ -360,7 +364,9 @@ streamlit run elasticdocs_gpt_local.py
 Then connect to the UI via the 'Local URL' displayed in the output of the streamlit command (which should be [this URL](http://localhost:8501/)).<br/>
 You should see something like this:
 
-![Strealit screenshot](https://github.com/blookot/elastic-rag-demo/blob/main/streamlit-screenshot.jpg)
+<p align="center">
+<img src="https://github.com/blookot/elastic-rag-demo/blob/main/streamlit-screenshot.jpg" width="80%" alt="Strealit screenshot"/>
+</p>
 
 You could ask for example (in French in our example!): 
 * "Comment optimiser mon cluster Elasticsearch pour le traitement de données à grande échelle ?"
