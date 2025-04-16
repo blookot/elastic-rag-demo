@@ -1,10 +1,10 @@
 # Elastic RAG Demo
 
-This repo will build a local demo of semantic search with RAG (etrieval augmented generation) using the Elastic stack and Streamlit.<br/>
-For the content, we will crawl the Elastic Labs blog posts to have some private data.
+This repo will help you build a local demo of semantic search with RAG (retrieval augmented generation) using the Elastic stack and Streamlit.<br/>
+For the content, we will crawl the Elastic Labs blog posts to have some data to pass as context to the LLM.
 
 This generative AI demo has been adapted from Jeff's excellent blog posts (see refs below) with a few changes:
-* I wanted to run everything locally, so the Elastic stack and the LLM run locally,
+* I wanted to run everything locally, so the Elastic stack and the LLM are local,
 * I wanted to have multilingual support, so the demo uses the e5.small embedding model (instead of Elastic's default ELSER) to support multilingual search. The examples will be in French.
 
 Note: this is for demo purpose only! This deployment is not secure, so do not use it in production or with confidential data!
