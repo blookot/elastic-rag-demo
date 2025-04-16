@@ -146,9 +146,10 @@ Click 'Create a new web crawler'.<br/>
 Name it (search-)elastic-labs and click 'Create index'.
 
 Click the 'Mappings' tab and click 'Add field'.<br/>
-Select 'Semantic text' in the field type, 'body_content' as reference field and 'semantic_body' as new field name. Change to 'my-e5-model' as inference endpoint and click the button 'Add field'. As illustrated below:
+Select 'Semantic text' in the field type, 'body_content' as reference field and 'semantic_body' as new field name. Change to 'my-e5-model' as inference endpoint and click the button 'Add field'.<br/>
+See illustration below:
 
-![Mistral config](https://github.com/blookot/elastic-rag-demo/blob/main/semantic-field.jpg)
+<img src="https://github.com/blookot/elastic-rag-demo/blob/main/semantic-field.jpg" width="70%" alt="Mistral config"/>
 
 Click the green button 'Save mapping'.
 
