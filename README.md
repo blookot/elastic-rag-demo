@@ -160,7 +160,7 @@ In the 'Manage domains' tab, click 'Add domain'.<br/>
 Enter `https://www.elastic.co/search-labs` and click 'Validate'.<br/>
 After the checks run, click 'Add domain'. 
 
-Click 'Add entry point' and enter `/security-labs` then click Save.<br/>
+Click 'Add entry point' and enter `/security-labs` then click 'Save'.<br/>
 Repeat for `/observability-labs`
 
 Click the 'Crawl rules' tab. Click 'Add crawl rule' and enter:<br/>
@@ -198,11 +198,11 @@ Go to Kibana > Stack Management > Connectors > Create connector > OpenAI
 Configuring the connector for Mistral will look like this:
 
 <p align="center">
-<img src="https://github.com/blookot/elastic-rag-demo/blob/main/mistral-connector.jpg" width="80%" alt="Mistral config"/>
+<img src="https://github.com/blookot/elastic-rag-demo/blob/main/mistral-connector.png" width="80%" alt="Mistral config"/>
 </p>
 
 with this setup: 
-* connector name: `Mistral`
+* Connector name: `Mistral`
 * OpenAI provider: `OpenAI`
 * URL: `http://host.docker.internal:11434/v1/chat/completions`
 * Default model: `mistral`
@@ -223,8 +223,10 @@ The infered field 'semantic_body' is automatically selected.<br/>
 In the bottom query bar, type "Hello!" to start with!
 You should get an answer :-)
 
-You can switch to French, setting the instructions: "Tu es un assistant conversationnel en Français."<br/>
-And then ask for example: "Peux-tu m'aider à mettre en place de la recherche sémantique augmentée (RAG) avec Elasticsearch ?"
+You can switch to French, setting the instructions:<br/>
+"Tu es un assistant conversationnel qui répond en Français."<br/>
+And then ask for example:<br/>
+"Peux-tu m'aider à mettre en place de la recherche sémantique augmentée (RAG) avec Elasticsearch ?"
 
 Note: if you get a 10s timeout, you may need to increase the number of allocations of your inference endpoint to 4 allocations. Try to run this in Kibana > Dev Tools:
 ```
@@ -268,7 +270,7 @@ query = "Peux-tu m'aider à mettre en place de la recherche sémantique augment�
 Note: now it's the py script calling ollama, so we use localhost in the ollama URL.
 
 2/ We'll also change the instructions to have them in French!
-After the `prompt = f"""` line (and before the `Context: {context} """` line), replace everything with this big instruction block:
+After the `prompt = f"""` line and before the `Context: {context} """` line, replace everything with this big instruction block:
 
 ```
 Tu es un assistant utile et compétent conçu pour aider les utilisateurs à interroger des informations liées à la Recherche, à l'Observabilité et à la Sécurité. 
@@ -345,7 +347,7 @@ Note: in the `export local_es_pwd` command below, replace the random value with 
 Note2: now that it's the py script calling ollama, we use `localhost` in the ollama URL.
 
 ```
-# install required libs with
+# install required libs in a venv
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
@@ -365,15 +367,15 @@ Then connect to the UI via the 'Local URL' displayed in the output of the stream
 You should see something like this:
 
 <p align="center">
-<img src="https://github.com/blookot/elastic-rag-demo/blob/main/streamlit-screenshot.jpg" width="80%" alt="Strealit screenshot"/>
+<img src="https://github.com/blookot/elastic-rag-demo/blob/main/streamlit-screenshot.jpg" width="60%" alt="Strealit screenshot"/>
 </p>
 
 You could ask for example (in French in our example!): 
 * "Comment optimiser mon cluster Elasticsearch pour le traitement de données à grande échelle ?"
 * "Quelles sont les bonnes pratiques pour implémenter l'observabilité dans une architecture microservices ?"
 * "Comment sécuriser les données sensibles dans Elasticsearch ?"
-* "Peux-tu m'aider à mettre en place de la recherche sémantique augmentée (RAG) avec Elasticsearch ?" !!
-* "Quelles API Elasticsearch dois-je utiliser pour utiliser un champ semantic_text ?" !!
+* "Peux-tu m'aider à mettre en place de la recherche sémantique augmentée (RAG) avec Elasticsearch ?"
+* "Quelles API Elasticsearch dois-je utiliser pour utiliser un champ semantic_text ?"
 
 Once you've finished testing, you can remove the virtual environment:
 ```
